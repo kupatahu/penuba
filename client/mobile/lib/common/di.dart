@@ -5,4 +5,7 @@ import 'package:get_it/get_it.dart';
 final get = GetIt.instance;
 
 @injectableInit
-void initDI() => get.init();
+Future<void> initDI() async{
+  get.init();
+  await get.allReady();
+}

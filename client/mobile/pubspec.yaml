@@ -15,6 +15,9 @@ dependencies:
   flutter_bloc: ^8.1.3
   injectable: ^2.1.2
   get_it: ^7.6.0
+  isar: ^3.1.0+1
+  isar_flutter_libs: ^3.1.0+1
+  path_provider: ^2.0.15
 
 dev_dependencies:
   flutter_test:
@@ -22,6 +25,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   injectable_generator: ^2.1.6
   build_runner: ^2.4.6
+  isar_generator: ^3.1.0+1
 
 flutter:
   uses-material-design: true

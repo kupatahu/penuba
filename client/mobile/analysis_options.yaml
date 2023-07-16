@@ -1,8 +1,12 @@
 # https://dart.dev/guides/language/analysis-options
 include: package:flutter_lints/flutter.yaml
 
+analyzer:
+  exclude:
+    - lib/common/di.config.dart
+    - lib/**/*.g.dart
+
+# https://dart-lang.github.io/linter/lints/index.html.
 linter:
-  # https://dart-lang.github.io/linter/lints/index.html.
-  
   rules:
     - require_trailing_commas
