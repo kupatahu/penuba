@@ -1,8 +1,8 @@
 import 'package:injectable/injectable.dart';
-import 'package:penuba/home/counter.dart';
-import 'package:penuba/home/counter_local_db.dart';
-import 'package:penuba/home/counter_model.dart';
-import 'package:penuba/home/counter_repo.dart';
+import 'package:penuba/feature/home/counter.dart';
+import 'package:penuba/feature/home/counter_local_db.dart';
+import 'package:penuba/feature/home/counter_model.dart';
+import 'package:penuba/feature/home/counter_repo.dart';
 
 @LazySingleton(as: CounterRepo)
 class CounterRepoImpl implements CounterRepo {

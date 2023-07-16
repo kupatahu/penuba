@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:penuba/app.dart';
-import 'package:penuba/common/di.dart';
+import 'package:penuba/di/di.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

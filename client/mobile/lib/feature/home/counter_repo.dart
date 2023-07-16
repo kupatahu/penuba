@@ -1,4 +1,4 @@
-import 'package:penuba/home/counter.dart';
+import 'package:penuba/feature/home/counter.dart';
 
 abstract class CounterRepo {
   Future<Counter?> get();
