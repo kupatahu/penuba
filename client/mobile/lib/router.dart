@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:penuba/feature/home/router.dart';
+import 'package:penuba/home/router.dart';
 
 abstract class AppRouter {
   static final initialRoute = HomeRouter.home;

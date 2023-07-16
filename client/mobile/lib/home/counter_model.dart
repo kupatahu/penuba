@@ -1,4 +1,4 @@
-import 'package:penuba/feature/home/counter.dart';
+import 'package:penuba/home/counter.dart';
 import 'package:isar/isar.dart';
 
 part 'counter_model.g.dart';

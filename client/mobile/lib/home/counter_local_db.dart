@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 import 'package:penuba/local_db/local_db.dart';
-import 'package:penuba/feature/home/counter_model.dart';
+import 'package:penuba/home/counter_model.dart';
 
 @lazySingleton
 class CounterLocalDb {

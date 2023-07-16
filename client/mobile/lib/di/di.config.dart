@@ -11,11 +11,11 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:penuba/feature/home/counter_cubit.dart' as _i8;
-import 'package:penuba/feature/home/counter_local_db.dart' as _i4;
-import 'package:penuba/feature/home/counter_repo.dart' as _i5;
-import 'package:penuba/feature/home/counter_repo_impl.dart' as _i6;
-import 'package:penuba/feature/home/counter_usecase.dart' as _i7;
+import 'package:penuba/home/counter_cubit.dart' as _i8;
+import 'package:penuba/home/counter_local_db.dart' as _i4;
+import 'package:penuba/home/counter_repo.dart' as _i5;
+import 'package:penuba/home/counter_repo_impl.dart' as _i6;
+import 'package:penuba/home/counter_usecase.dart' as _i7;
 import 'package:penuba/local_db/local_db.dart' as _i3;
 
 extension GetItInjectableX on _i1.GetIt {

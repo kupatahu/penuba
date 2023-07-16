@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:penuba/di/di.dart';
-import 'package:penuba/feature/home/counter.dart';
-import 'package:penuba/feature/home/counter_cubit.dart';
+import 'package:penuba/home/counter.dart';
+import 'package:penuba/home/counter_cubit.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

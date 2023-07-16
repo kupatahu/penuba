@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:penuba/feature/home/home_page.dart';
+import 'package:penuba/home/home_page.dart';
 
 abstract class HomeRouter {
   static String home = '/home';
