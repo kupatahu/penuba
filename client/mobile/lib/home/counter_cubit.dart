@@ -18,7 +18,12 @@ class CounterCubit extends Cubit<Counter> {
   }
 
   void increment() {
-    final updatedCounter = counterUsecase.increment(state);
-    emit(updatedCounter);
+    final counter = counterUsecase.increment(state);
+    emit(counter);
+  }
+
+  void reset() {
+    final counter = counterUsecase.reset();
+    emit(counter);
   }
 }

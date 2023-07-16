@@ -18,4 +18,11 @@ class CounterUsecase {
 
     return updatedCounter;
   }
+
+  Counter reset() {
+    const counter = Counter();
+    counterRepo.set(counter);
+
+    return counter;
+  }
 }

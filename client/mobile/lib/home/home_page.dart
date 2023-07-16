@@ -25,7 +25,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const HomeAppBar(),
-      body: const HomeBody(),
+      body: HomeBody(
+        onTapCounter: counterCubit.reset,
+      ),
       floatingActionButton: HomeFab(
         onPressed: counterCubit.increment,
       ),
@@ -49,7 +51,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class HomeBody extends StatefulWidget {
-  const HomeBody({super.key});
+  final VoidCallback onTapCounter;
+
+  const HomeBody({super.key, required this.onTapCounter});
 
   @override
   State<HomeBody> createState() => _HomeBodyState();
@@ -67,14 +71,17 @@ class _HomeBodyState extends State<HomeBody> {
           const Text(
             'You have pushed the button this many times:',
           ),
-          BlocBuilder<CounterCubit, Counter>(
-            bloc: counterCubit,
-            builder: (context, counter) {
-              return Text(
-                '${counter.value}',
-                style: Theme.of(context).textTheme.headlineMedium,
-              );
-            },
+          GestureDetector(
+            onTap: widget.onTapCounter,
+            child: BlocBuilder<CounterCubit, Counter>(
+              bloc: counterCubit,
+              builder: (context, counter) {
+                return Text(
+                  '${counter.value}',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                );
+              },
+            ),
           ),
         ],
       ),
