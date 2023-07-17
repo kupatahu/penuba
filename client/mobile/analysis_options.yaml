@@ -3,7 +3,7 @@ include: package:flutter_lints/flutter.yaml
 
 analyzer:
   exclude:
-    - lib/common/di.config.dart
+    - lib/di/di.config.dart
     - lib/**/*.g.dart
 
 # https://dart-lang.github.io/linter/lints/index.html.
