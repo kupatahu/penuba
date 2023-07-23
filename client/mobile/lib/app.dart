@@ -24,7 +24,7 @@ class App extends StatelessWidget {
         appBarTheme: AppBarTheme(
           surfaceTintColor: Colors.transparent,
           shadowColor: Theme.of(context).shadowColor,
-          scrolledUnderElevation: 1,
+          scrolledUnderElevation: 2,
         ),
         cardTheme: const CardTheme(
           surfaceTintColor: Colors.transparent,
