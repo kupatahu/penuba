@@ -9,5 +9,6 @@ analyzer:
 # https://dart-lang.github.io/linter/lints/index.html.
 linter:
   rules:
-    - require_trailing_commas
-    - always_use_package_imports
+    require_trailing_commas: true
+    always_use_package_imports: true
+    overridden_fields: false

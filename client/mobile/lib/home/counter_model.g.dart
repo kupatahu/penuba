@@ -14,8 +14,8 @@ extension GetCounterModelCollection on Isar {
 }
 
 const CounterModelSchema = CollectionSchema(
-  name: r'Counter',
-  id: -8560901831524329398,
+  name: r'CounterModel',
+  id: 5790029722091172040,
   properties: {
     r'value': PropertySchema(
       id: 0,

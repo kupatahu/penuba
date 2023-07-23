@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:penuba/di/di.dart';
 import 'package:penuba/trip/trip.dart';
+import 'package:penuba/trip/trip_cubit.dart';
 
 class TripListPage extends StatelessWidget {
   const TripListPage({super.key});
@@ -27,27 +30,39 @@ class TripListBody extends StatelessWidget {
   }
 }
 
-class TripList extends StatelessWidget {
+class TripList extends StatefulWidget {
   const TripList({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final trips = [
-      Trip(
-        destination: 'Machu Picchu',
-        start: DateTime.parse('2023-10-10T14:00:00+0700'),
-        end: DateTime.parse('2023-10-20T14:00:00+0700'),
-      ),
-    ];
+  State<TripList> createState() => _TripListState();
+}
 
+class _TripListState extends State<TripList> {
+  final tripCubit = get<TripCubit>();
+
+  @override
+  void initState() {
+    tripCubit.fetchAll();
+
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
-      child: ListView.builder(
-        itemCount: trips.length,
-        prototypeItem: TripCard(trip: trips.first),
-        itemBuilder: (context, index) => TripCard(
-          trip: trips[index],
-        ),
+      child: BlocBuilder<TripCubit, List<Trip>>(
+        bloc: tripCubit,
+        builder: (context, trips) {
+          return ListView.builder(
+            itemCount: trips.length,
+            prototypeItem:
+                trips.isNotEmpty ? TripCard(trip: trips.first) : null,
+            itemBuilder: (context, index) => TripCard(
+              trip: trips[index],
+            ),
+          );
+        },
       ),
     );
   }

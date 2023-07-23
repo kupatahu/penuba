@@ -4,7 +4,6 @@ import 'package:isar/isar.dart';
 part 'counter_model.g.dart';
 
 @collection
-@Name('Counter')
 class CounterModel extends Counter {
   final Id id;
 

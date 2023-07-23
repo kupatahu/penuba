@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:penuba/local_db/schemas.dart';
+import 'package:penuba/local_datasource/schemas.dart';
 
 @lazySingleton
 class LocalDb {
