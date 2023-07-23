@@ -21,6 +21,11 @@ class App extends StatelessWidget {
           surface: Colors.white,
           onSurface: Colors.black,
         ),
+        appBarTheme: AppBarTheme(
+          surfaceTintColor: Colors.transparent,
+          shadowColor: Theme.of(context).shadowColor,
+          scrolledUnderElevation: 1,
+        ),
         useMaterial3: true,
       ),
       initialRoute: AppRouter.initialRoute,

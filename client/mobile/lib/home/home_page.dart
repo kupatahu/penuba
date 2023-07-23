@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:penuba/di/di.dart';
 import 'package:penuba/home/counter.dart';
 import 'package:penuba/home/counter_cubit.dart';
-import 'package:penuba/widget/common_app_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,8 +24,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CommonAppBar(
-        title: Text('Home'),
+      appBar: AppBar(
+        title: const Text('Home'),
       ),
       body: HomeBody(
         onTapCounter: counterCubit.reset,
