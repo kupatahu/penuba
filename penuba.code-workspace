@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "client/mobile"
+		}
+	],
+	"settings": {
+		"git-blame.gitWebUrl": "https://github.com/kupatahu/penuba"
+	}
+}
