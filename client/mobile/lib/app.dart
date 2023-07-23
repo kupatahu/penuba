@@ -26,6 +26,9 @@ class App extends StatelessWidget {
           shadowColor: Theme.of(context).shadowColor,
           scrolledUnderElevation: 1,
         ),
+        cardTheme: const CardTheme(
+          surfaceTintColor: Colors.transparent,
+        ),
         useMaterial3: true,
       ),
       initialRoute: AppRouter.initialRoute,

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:penuba/home/router.dart';
+import 'package:penuba/trip/router.dart';
 
 abstract class AppRouter {
-  static final initialRoute = HomeRouter.home;
+  static final initialRoute = TripRouter.tripList;
 
   static final _routes = {
-    ...HomeRouter.routes
+    ...HomeRouter.routes,
+    ...TripRouter.routes
   };
 
   static RouteFactory onGenerateRoute = (settings) {
