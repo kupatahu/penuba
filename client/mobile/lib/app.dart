@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:penuba/router.dart';
+import 'package:penuba/route.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -31,8 +31,8 @@ class App extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      initialRoute: AppRouter.initialRoute,
-      onGenerateRoute: AppRouter.onGenerateRoute,
+      initialRoute: AppRoute.initial,
+      onGenerateRoute: AppRoute.onGenerate,
     );
   }
 }
