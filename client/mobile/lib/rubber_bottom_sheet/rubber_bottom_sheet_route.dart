@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:rubber/rubber.dart';
 
-class BottomSheetRoute<T> extends PopupRoute<T> {
+class RubberBottomSheetRoute<T> extends PopupRoute<T> {
   final Widget Function(BuildContext, ScrollController) builder;
   final bool isDismissible;
 
-  BottomSheetRoute({required this.builder, this.isDismissible = true});
+  RubberBottomSheetRoute({required this.builder, this.isDismissible = true});
 
   @override
   Color? get barrierColor => Colors.black54;
@@ -49,7 +49,7 @@ class BottomSheetRoute<T> extends PopupRoute<T> {
 }
 
 class _BottomSheet<T> extends StatelessWidget {
-  final BottomSheetRoute<T> route;
+  final RubberBottomSheetRoute<T> route;
 
   const _BottomSheet({super.key, required this.route});
 
