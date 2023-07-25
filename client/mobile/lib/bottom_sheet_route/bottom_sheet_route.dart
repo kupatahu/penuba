@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rubber/rubber.dart';
 
 class BottomSheetRoute<T> extends PopupRoute<T> {
-  final WidgetBuilder builder;
+  final Widget Function(BuildContext, ScrollController) builder;
   final bool isDismissible;
 
   BottomSheetRoute({required this.builder, this.isDismissible = true});
@@ -59,7 +59,7 @@ class _BottomSheet<T> extends StatelessWidget {
       vsync: route.navigator!,
       lowerBoundValue: AnimationControllerValue(percentage: 0.0),
       halfBoundValue: AnimationControllerValue(percentage: 0.5),
-      upperBoundValue: AnimationControllerValue(percentage: 0.9),
+      upperBoundValue: AnimationControllerValue(percentage: 0.95),
       initialValue: 0.5,
       springDescription: SpringDescription.withDampingRatio(
         mass: 1,
@@ -78,10 +78,13 @@ class _BottomSheet<T> extends StatelessWidget {
       }
     });
 
+    final scrollController = ScrollController();
+
     return RubberBottomSheet(
       animationController: animationController,
+      scrollController: scrollController,
       lowerLayer: const SizedBox(),
-      upperLayer: Builder(builder: route.builder),
+      upperLayer: Builder(builder: (context) => route.builder(context, scrollController)),
     );
   }
 }
