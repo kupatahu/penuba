@@ -55,20 +55,31 @@ class _BottomSheet<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RubberBottomSheet(
-      animationController: RubberAnimationController(
-        vsync: route.navigator!,
-        lowerBoundValue: AnimationControllerValue(percentage: 0.5),
-        upperBoundValue: AnimationControllerValue(percentage: 0.9),
-        springDescription: SpringDescription.withDampingRatio(
-          mass: 1,
-          stiffness: Stiffness.LOW,
-          ratio: DampingRatio.LOW_BOUNCY,
-        ),
-        duration: const Duration(
-          milliseconds: 300,
-        ),
+    final animationController = RubberAnimationController(
+      vsync: route.navigator!,
+      lowerBoundValue: AnimationControllerValue(percentage: 0.0),
+      halfBoundValue: AnimationControllerValue(percentage: 0.5),
+      upperBoundValue: AnimationControllerValue(percentage: 0.9),
+      initialValue: 0.5,
+      springDescription: SpringDescription.withDampingRatio(
+        mass: 1,
+        stiffness: Stiffness.LOW,
+        ratio: DampingRatio.LOW_BOUNCY,
       ),
+      duration: const Duration(
+        milliseconds: 300,
+      ),
+    );
+
+    animationController.animationState.addListener(() {
+      if (animationController.animationState.value ==
+          AnimationState.collapsed) {
+        Navigator.of(context).pop();
+      }
+    });
+
+    return RubberBottomSheet(
+      animationController: animationController,
       lowerLayer: const SizedBox(),
       upperLayer: Builder(builder: route.builder),
     );
