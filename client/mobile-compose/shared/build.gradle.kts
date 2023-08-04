@@ -33,6 +33,7 @@ kotlin {
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
                 implementation("cafe.adriel.voyager:voyager-navigator:1.0.0-rc06")
+                implementation("cafe.adriel.voyager:voyager-transitions:1.0.0-rc06")
             }
         }
         val androidMain by getting {
