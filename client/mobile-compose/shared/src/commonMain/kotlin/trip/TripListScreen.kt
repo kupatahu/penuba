@@ -10,7 +10,6 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import component.ExtendedTopAppBar
 import moe.tlaster.precompose.navigation.Navigator
-import moe.tlaster.precompose.stateholder.LocalStateHolder
 
 @Composable
 fun TripListScreen(navigator: Navigator) {
@@ -20,7 +19,7 @@ fun TripListScreen(navigator: Navigator) {
                 title = { Text("Trips") },
                 actions = {
                     Row {
-                        IconButton(onClick = { navigator.navigate("/trips/new") }) {
+                        IconButton(onClick = { navigator.navigate(TripRoute.create) }) {
                             Icon(Icons.Filled.Add, "addIcon")
                         }
                     }

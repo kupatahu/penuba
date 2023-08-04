@@ -6,8 +6,7 @@ import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.SwipeProperties
 import moe.tlaster.precompose.navigation.rememberNavigator
 import moe.tlaster.precompose.navigation.transition.NavTransition
-import trip.TripCreationScreen
-import trip.TripListScreen
+import trip.TripRoute
 
 @Composable
 fun App() {
@@ -24,19 +23,14 @@ fun App() {
 
     NavHost(
         navigator = navigator,
-        initialRoute = "/trips",
+        initialRoute = TripRoute.root,
         navTransition = navTransition,
         swipeProperties = SwipeProperties()
     ) {
-        scene(
-            route = "/trips"
-        ) {
-            TripListScreen(navigator)
-        }
-        scene(
-            route = "/trips/new"
-        ) {
-            TripCreationScreen(navigator)
-        }
+        group(
+            route = TripRoute.root,
+            initialRoute = TripRoute.list,
+            content = TripRoute.route(navigator)
+        )
     }
 }
