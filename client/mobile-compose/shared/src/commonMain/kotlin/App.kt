@@ -1,13 +1,25 @@
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
-import cafe.adriel.voyager.navigator.Navigator
-import cafe.adriel.voyager.transitions.SlideTransition
+import moe.tlaster.precompose.navigation.NavHost
+import moe.tlaster.precompose.navigation.rememberNavigator
+import trip.TripCreationScreen
 import trip.TripListScreen
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun App() {
-    Navigator(TripListScreen()) {
-        SlideTransition(it)
+    val navigator = rememberNavigator()
+
+    NavHost(
+        navigator = navigator, initialRoute = "/trips"
+    ) {
+        scene(
+            route = "/trips"
+        ) {
+            TripListScreen(navigator)
+        }
+        scene(
+            route = "/trips/new"
+        ) {
+            TripCreationScreen(navigator)
+        }
     }
 }

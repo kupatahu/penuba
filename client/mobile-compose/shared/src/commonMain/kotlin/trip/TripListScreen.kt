@@ -8,29 +8,24 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
-import cafe.adriel.voyager.core.screen.Screen
-import cafe.adriel.voyager.navigator.LocalNavigator
-import cafe.adriel.voyager.navigator.currentOrThrow
 import component.ExtendedTopAppBar
+import moe.tlaster.precompose.navigation.Navigator
+import moe.tlaster.precompose.stateholder.LocalStateHolder
 
-class TripListScreen() : Screen {
-    @Composable
-    override fun Content() {
-        val navigator = LocalNavigator.currentOrThrow
-
-        Scaffold(
-            topBar = {
-                ExtendedTopAppBar(
-                    title = { Text("Trips") },
-                    actions = {
-                        Row {
-                            IconButton(onClick = { navigator.push(TripCreationScreen()) }) {
-                                Icon(Icons.Filled.Add, "addIcon")
-                            }
+@Composable
+fun TripListScreen(navigator: Navigator) {
+    Scaffold(
+        topBar = {
+            ExtendedTopAppBar(
+                title = { Text("Trips") },
+                actions = {
+                    Row {
+                        IconButton(onClick = { navigator.navigate("/trips/new") }) {
+                            Icon(Icons.Filled.Add, "addIcon")
                         }
-                    },
-                )
-            },
-        ) {}
-    }
+                    }
+                },
+            )
+        },
+    ) {}
 }

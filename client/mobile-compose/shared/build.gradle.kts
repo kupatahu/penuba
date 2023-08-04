@@ -31,12 +31,10 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material)
-                implementation(compose.material3)
                 implementation(compose.animation)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
-                implementation("cafe.adriel.voyager:voyager-navigator:1.0.0-rc06")
-                implementation("cafe.adriel.voyager:voyager-transitions:1.0.0-rc06")
+                api("moe.tlaster:precompose:1.5.0-beta01")
             }
         }
         val androidMain by getting {

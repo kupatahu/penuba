@@ -7,27 +7,21 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
-import cafe.adriel.voyager.core.screen.Screen
-import cafe.adriel.voyager.navigator.LocalNavigator
-import cafe.adriel.voyager.navigator.currentOrThrow
 import component.ExtendedTopAppBar
+import moe.tlaster.precompose.navigation.Navigator
 
-class TripCreationScreen : Screen {
-
-    @Composable
-    override fun Content() {
-        val navigator = LocalNavigator.currentOrThrow
-        Scaffold(
-            topBar = {
-                ExtendedTopAppBar(
-                    title = { Text("Create New Trip") },
-                    navigationIcon = {
-                        IconButton(onClick = { navigator.pop() }) {
-                            Icon(Icons.Filled.ArrowBack, "backIcon")
-                        }
-                    },
-                )
-            },
-        ) {}
-    }
+@Composable
+fun TripCreationScreen(navigator: Navigator) {
+    Scaffold(
+        topBar = {
+            ExtendedTopAppBar(
+                title = { Text("Create New Trip") },
+                navigationIcon = {
+                    IconButton(onClick = { navigator.goBack() }) {
+                        Icon(Icons.Filled.ArrowBack, "backIcon")
+                    }
+                },
+            )
+        },
+    ) {}
 }
