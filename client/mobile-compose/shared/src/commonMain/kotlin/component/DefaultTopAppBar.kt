@@ -1,8 +1,11 @@
 package component
 
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 
@@ -14,6 +17,7 @@ fun DefaultTopAppBar(
 ) {
     TopAppBar(
         title = title,
+        modifier = Modifier.windowInsetsPadding(WindowInsets.statusBar),
         navigationIcon = navigationIcon,
         actions = actions,
         backgroundColor = Color.White,
