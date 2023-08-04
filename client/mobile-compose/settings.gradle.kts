@@ -1,4 +1,4 @@
-rootProject.name = "MyApplication"
+rootProject.name = "Penuba"
 
 include(":androidApp")
 include(":shared")

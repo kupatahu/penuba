@@ -1,4 +1,4 @@
-package com.myapplication
+package com.kupatahu
 
 import MainView
 import android.os.Bundle
