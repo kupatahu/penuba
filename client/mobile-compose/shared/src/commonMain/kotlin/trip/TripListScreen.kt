@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import component.DefaultTopAppBar
+import component.ExtendedTopAppBar
 
 class TripListScreen() : Screen {
     @Composable
@@ -20,7 +20,7 @@ class TripListScreen() : Screen {
 
         Scaffold(
             topBar = {
-                DefaultTopAppBar(
+                ExtendedTopAppBar(
                     title = { Text("Trips") },
                     actions = {
                         Row {

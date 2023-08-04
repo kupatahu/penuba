@@ -13,7 +13,7 @@ import platform.CoreGraphics.CGFloat
 import platform.UIKit.UIApplication
 import platform.UIKit.UIEdgeInsets
 
-actual val WindowInsets.Companion.statusBar: WindowInsets
+actual val WindowInsets.Companion.statusBars: WindowInsets
     @Composable @NonRestartableComposable get() = Insets.only(WindowInsetsSides.Top)
 
 @OptIn(ExperimentalForeignApi::class)

@@ -6,4 +6,4 @@ import androidx.compose.runtime.NonRestartableComposable
 
 @get:Composable
 @get:NonRestartableComposable
-expect val WindowInsets.Companion.statusBar : WindowInsets
+expect val WindowInsets.Companion.statusBars : WindowInsets
