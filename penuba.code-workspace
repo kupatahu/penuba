@@ -6,5 +6,30 @@
 	],
 	"settings": {
 		"git-blame.gitWebUrl": "https://github.com/kupatahu/penuba"
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "mobile",
+				"request": "launch",
+				"type": "dart",
+				"program": "lib/main.dart"
+			},
+			{
+				"name": "mobile (profile mode)",
+				"request": "launch",
+				"type": "dart",
+				"program": "lib/main.dart",
+				"flutterMode": "profile"
+			},
+			{
+				"name": "mobile (release mode)",
+				"request": "launch",
+				"type": "dart",
+				"program": "lib/main.dart",
+				"flutterMode": "release"
+			}
+		]
 	}
 }
