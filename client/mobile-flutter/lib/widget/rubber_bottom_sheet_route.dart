@@ -1,20 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:penuba/widget/slide_popup_route.dart';
 import 'package:rubber/rubber.dart';
 
-class RubberBottomSheetRoute<T> extends PopupRoute<T> {
+class RubberBottomSheetRoute<T> extends SlidePopupRoute<T> {
   final Widget Function(BuildContext, ScrollController) builder;
-  final bool isDismissible;
 
-  RubberBottomSheetRoute({required this.builder, this.isDismissible = true});
-
-  @override
-  Color? get barrierColor => Colors.black54;
-
-  @override
-  bool get barrierDismissible => isDismissible;
-
-  @override
-  String? get barrierLabel => null;
+  RubberBottomSheetRoute({required this.builder, super.isDismissible = true});
 
   @override
   Widget buildPage(
@@ -22,36 +13,14 @@ class RubberBottomSheetRoute<T> extends PopupRoute<T> {
     Animation<double> animation,
     Animation<double> secondaryAnimation,
   ) {
-    return _BottomSheet(route: this);
-  }
-
-  @override
-  Duration get transitionDuration => const Duration(milliseconds: 500);
-
-  @override
-  Widget buildTransitions(
-    BuildContext context,
-    Animation<double> animation,
-    Animation<double> secondaryAnimation,
-    Widget child,
-  ) {
-    const begin = Offset(0.0, 1.0);
-    const end = Offset.zero;
-    const curve = Curves.easeInOutExpo;
-
-    var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
-    return SlideTransition(
-      position: animation.drive(tween),
-      child: child,
-    );
+    return _RubberBottomSheet(route: this);
   }
 }
 
-class _BottomSheet<T> extends StatelessWidget {
+class _RubberBottomSheet<T> extends StatelessWidget {
   final RubberBottomSheetRoute<T> route;
 
-  const _BottomSheet({super.key, required this.route});
+  const _RubberBottomSheet({super.key, required this.route});
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +53,9 @@ class _BottomSheet<T> extends StatelessWidget {
       animationController: animationController,
       scrollController: scrollController,
       lowerLayer: const SizedBox(),
-      upperLayer: Builder(builder: (context) => route.builder(context, scrollController)),
+      upperLayer: Builder(
+        builder: (context) => route.builder(context, scrollController),
+      ),
     );
   }
 }
