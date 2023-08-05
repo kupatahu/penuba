@@ -3,7 +3,7 @@ import 'package:penuba/home/home_route.dart';
 import 'package:penuba/trip/trip_route.dart';
 
 abstract class AppRoute {
-  static final initial = TripRoute.tripList;
+  static final initial = TripRoute.all;
 
   static final _routes = {
     ...HomeRoute.routes,

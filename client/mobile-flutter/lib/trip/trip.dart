@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:intl/intl.dart';
-import 'package:penuba/uuid/uuid.dart';
+import 'package:penuba/util/uuid.dart';
 
 class Trip implements Equatable {
   final String identifier;

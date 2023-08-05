@@ -11,12 +11,12 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
+import 'package:penuba/data/local_db.dart' as _i3;
 import 'package:penuba/home/counter_collection.dart' as _i8;
 import 'package:penuba/home/counter_cubit.dart' as _i13;
 import 'package:penuba/home/counter_repo.dart' as _i9;
 import 'package:penuba/home/counter_repo_impl.dart' as _i10;
 import 'package:penuba/home/counter_usecase.dart' as _i11;
-import 'package:penuba/local_datasource/local_db.dart' as _i3;
 import 'package:penuba/trip/trip_collection.dart' as _i4;
 import 'package:penuba/trip/trip_cubit.dart' as _i12;
 import 'package:penuba/trip/trip_repo.dart' as _i5;

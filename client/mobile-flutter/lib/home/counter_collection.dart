@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
-import 'package:penuba/local_datasource/collection.dart';
-import 'package:penuba/local_datasource/local_db.dart';
+import 'package:penuba/data/collection.dart';
+import 'package:penuba/data/local_db.dart';
 import 'package:penuba/home/counter_model.dart';
 
 @lazySingleton

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:penuba/di/di.dart';
+import 'package:penuba/core/di.dart';
 import 'package:penuba/trip/trip_route.dart';
 import 'package:penuba/trip/trip.dart';
 import 'package:penuba/trip/trip_cubit.dart';
@@ -17,7 +17,7 @@ class TripListPage extends StatelessWidget {
       body: const TripListBody(),
       floatingActionButton: TripListFab(
         onPressed: () => Navigator.of(context).pushNamed(
-          TripRoute.tripCreation,
+          TripRoute.create,
         ),
       ),
     );

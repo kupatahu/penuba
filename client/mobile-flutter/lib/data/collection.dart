@@ -1,5 +1,5 @@
 import 'package:isar/isar.dart';
-import 'package:penuba/local_datasource/local_db.dart';
+import 'package:penuba/data/local_db.dart';
 
 abstract class BaseCollection<T> {
   final LocalDb localDb;
