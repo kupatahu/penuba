@@ -4,8 +4,8 @@
 			"path": "."
 		},
 		{
-			"path": "client/mobile"
-		}
+			"path": "./client/mobile-flutter"
+		},
 	],
 	"settings": {
 		"git-blame.gitWebUrl": "https://github.com/kupatahu/penuba"

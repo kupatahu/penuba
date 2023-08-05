@@ -6,14 +6,14 @@
     "configurations": [
         {
             "name": "mobile",
-            "cwd": "client/mobile",
+            "cwd": "client/mobile-flutter",
             "request": "launch",
             "type": "dart",
             "program": "lib/main.dart"
         },
         {
             "name": "mobile (profile mode)",
-            "cwd": "client/mobile",
+            "cwd": "client/mobile-flutter",
             "request": "launch",
             "type": "dart",
             "program": "lib/main.dart",
@@ -21,7 +21,7 @@
         },
         {
             "name": "mobile (release mode)",
-            "cwd": "client/mobile",
+            "cwd": "client/mobile-flutter",
             "request": "launch",
             "type": "dart",
             "program": "lib/main.dart",
