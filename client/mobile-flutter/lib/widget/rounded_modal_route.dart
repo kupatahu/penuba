@@ -28,9 +28,9 @@ class _RoundedModal<T> extends StatefulWidget {
 
 class _RoundedModalState<T> extends State<_RoundedModal<T>>
     with SingleTickerProviderStateMixin {
-  Alignment _dragAlignment = Alignment.bottomCenter;
   late AnimationController _animationController;
-  late Animation<Alignment> _animation;
+  late Animation<Alignment> _alignmentAnimation;
+  final _alignment = ValueNotifier(Alignment.bottomCenter);
 
   @override
   void initState() {
@@ -40,11 +40,8 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
       vsync: this,
       duration: const Duration(milliseconds: 200),
     );
-
     _animationController.addListener(() {
-      setState(() {
-        _dragAlignment = _animation.value;
-      });
+      _alignment.value = _alignmentAnimation.value;
     });
   }
 
@@ -59,23 +56,29 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return GestureDetector(
+    return  GestureDetector(
       onPanDown: (details) {
         _animationController.stop();
       },
       onPanUpdate: (details) {
-        setState(() {
-          _dragAlignment += Alignment(
-            details.delta.dx / (size.width / 2),
-            details.delta.dy / (size.height / 2),
-          );
-        });
+        final updatedAlignment = _alignment.value +
+            Alignment(
+              0,
+              details.delta.dy / size.height,
+            );
+        _alignment.value = updatedAlignment;
       },
       onPanEnd: (details) {
         _runAnimation(details.velocity.pixelsPerSecond, size);
       },
-      child: Align(
-        alignment: _dragAlignment,
+      child: AnimatedBuilder(
+        animation: _alignment,
+        builder: (context, child) {
+          return Align(
+            alignment: _alignment.value,
+            child: child,
+          );
+        },
         child: SafeArea(
           bottom: false,
           child: Container(
@@ -99,9 +102,9 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
   }
 
   void _runAnimation(Offset pixelsPerSecond, Size size) {
-    _animation = _animationController.drive(
+    _alignmentAnimation = _animationController.drive(
       AlignmentTween(
-        begin: _dragAlignment,
+        begin: _alignment.value,
         end: Alignment.bottomCenter,
       ),
     );
