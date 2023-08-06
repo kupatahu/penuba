@@ -29,8 +29,8 @@ class _RoundedModal<T> extends StatefulWidget {
 class _RoundedModalState<T> extends State<_RoundedModal<T>>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
-  late Animation<Alignment> _alignmentAnimation;
-  final _alignment = ValueNotifier(Alignment.bottomCenter);
+  late Animation<Offset> _offsetAnimation;
+  final _offset = ValueNotifier(const Offset(0, 0));
 
   @override
   void initState() {
@@ -41,7 +41,7 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
       duration: const Duration(milliseconds: 200),
     );
     _animationController.addListener(() {
-      _alignment.value = _alignmentAnimation.value;
+      _offset.value = _offsetAnimation.value;
     });
   }
 
@@ -61,34 +61,34 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
         _animationController.stop();
       },
       onPanUpdate: (details) {
-        _updateVerticalAlignment(details, mediaQuery);
+        _updateVerticalOffset(details, mediaQuery);
       },
       onPanEnd: (details) {
-        _snapBackToInitialAlignment(details, mediaQuery);
+        _snapBack(details, mediaQuery);
       },
       child: AnimatedBuilder(
-        animation: _alignment,
+        animation: _offset,
         builder: (context, child) {
-          return Align(
-            alignment: _alignment.value,
+          return Transform.translate(
+            offset: _offset.value,
             child: child,
           );
         },
         child: SafeArea(
           bottom: false,
-          child: Positioned(
+          child: Align(
+            alignment: Alignment.bottomCenter,
             child: Container(
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 minWidth: double.infinity,
-                minHeight: 100,
-                maxHeight: mediaQuery.size.height * 0.6,
               ),
               decoration: const BoxDecoration(
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.all(Radius.circular(44)),
                 color: Colors.white,
               ),
-              margin: mediaQuery.viewInsets + const EdgeInsets.all(4.0),
+              padding: mediaQuery.viewInsets,
+              margin: const EdgeInsets.all(4.0),
               clipBehavior: Clip.hardEdge,
               child: widget.route.builder(context),
             ),
@@ -98,25 +98,26 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
     );
   }
 
-  void _updateVerticalAlignment(
+  void _updateVerticalOffset(
     DragUpdateDetails details,
     MediaQueryData mediaQuery,
   ) {
     if (details.delta.dy != 0) {
-      final updatedAlignment = _alignment.value +
-          Alignment(
-            0,
-            details.delta.dy / mediaQuery.size.height,
-          );
-      _alignment.value = updatedAlignment;
+      _offset.value += Offset(
+        0,
+        details.delta.dy / 4,
+      );
     }
   }
 
-  void _snapBackToInitialAlignment(DragEndDetails details, MediaQueryData mediaQuery) {
-    _alignmentAnimation = _animationController.drive(
-      AlignmentTween(
-        begin: _alignment.value,
-        end: Alignment.bottomCenter,
+  void _snapBack(
+    DragEndDetails details,
+    MediaQueryData mediaQuery,
+  ) {
+    _offsetAnimation = _animationController.drive(
+      Tween(
+        begin: _offset.value,
+        end: const Offset(0, 0),
       ),
     );
 
