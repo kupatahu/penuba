@@ -61,15 +61,10 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
         _animationController.stop();
       },
       onPanUpdate: (details) {
-        final updatedAlignment = _alignment.value +
-            Alignment(
-              0,
-              details.delta.dy / mediaQuery.size.height,
-            );
-        _alignment.value = updatedAlignment;
+        _updateVerticalAlignment(details, mediaQuery);
       },
       onPanEnd: (details) {
-        _runAnimation(details.velocity.pixelsPerSecond, mediaQuery.size);
+        _snapBackToInitialAlignment(details, mediaQuery);
       },
       child: AnimatedBuilder(
         animation: _alignment,
@@ -103,15 +98,33 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
     );
   }
 
-  void _runAnimation(Offset pixelsPerSecond, Size size) {
+  void _updateVerticalAlignment(
+    DragUpdateDetails details,
+    MediaQueryData mediaQuery,
+  ) {
+    if (details.delta.dy != 0) {
+      final updatedAlignment = _alignment.value +
+          Alignment(
+            0,
+            details.delta.dy / mediaQuery.size.height,
+          );
+      _alignment.value = updatedAlignment;
+    }
+  }
+
+  void _snapBackToInitialAlignment(DragEndDetails details, MediaQueryData mediaQuery) {
     _alignmentAnimation = _animationController.drive(
       AlignmentTween(
         begin: _alignment.value,
         end: Alignment.bottomCenter,
       ),
     );
+
     // Calculate the velocity relative to the unit interval, [0,1],
     // used by the animation controller.
+    final pixelsPerSecond = details.velocity.pixelsPerSecond;
+    final size = mediaQuery.size;
+
     final unitsPerSecondX = pixelsPerSecond.dx / size.width;
     final unitsPerSecondY = pixelsPerSecond.dy / size.height;
     final unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
