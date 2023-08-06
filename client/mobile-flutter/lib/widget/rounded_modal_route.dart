@@ -54,9 +54,9 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final mediaQuery = MediaQuery.of(context);
 
-    return  GestureDetector(
+    return GestureDetector(
       onPanDown: (details) {
         _animationController.stop();
       },
@@ -64,12 +64,12 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
         final updatedAlignment = _alignment.value +
             Alignment(
               0,
-              details.delta.dy / size.height,
+              details.delta.dy / mediaQuery.size.height,
             );
         _alignment.value = updatedAlignment;
       },
       onPanEnd: (details) {
-        _runAnimation(details.velocity.pixelsPerSecond, size);
+        _runAnimation(details.velocity.pixelsPerSecond, mediaQuery.size);
       },
       child: AnimatedBuilder(
         animation: _alignment,
@@ -81,20 +81,22 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
         },
         child: SafeArea(
           bottom: false,
-          child: Container(
-            constraints: BoxConstraints(
-              minWidth: double.infinity,
-              minHeight: 100,
-              maxHeight: size.height * 0.6,
+          child: Positioned(
+            child: Container(
+              constraints: BoxConstraints(
+                minWidth: double.infinity,
+                minHeight: 100,
+                maxHeight: mediaQuery.size.height * 0.6,
+              ),
+              decoration: const BoxDecoration(
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.all(Radius.circular(44)),
+                color: Colors.white,
+              ),
+              margin: mediaQuery.viewInsets + const EdgeInsets.all(4.0),
+              clipBehavior: Clip.hardEdge,
+              child: widget.route.builder(context),
             ),
-            decoration: const BoxDecoration(
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.all(Radius.circular(44)),
-              color: Colors.white,
-            ),
-            margin: const EdgeInsets.all(4.0),
-            clipBehavior: Clip.hardEdge,
-            child: widget.route.builder(context),
           ),
         ),
       ),
