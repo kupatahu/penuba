@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:penuba/widget/secondary_app_bar.dart';
 
 class TripCreationPage extends StatelessWidget {
   final ScrollController scrollController;
@@ -8,11 +7,11 @@ class TripCreationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: SecondaryAppBar(
-        title: Text('Create New Trip'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Create New Trip'),
       ),
-      body: Placeholder(),
+      body: const Text('Create New Trip'),
     );
   }
 }
