@@ -54,18 +54,15 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
+    final size = MediaQuery.sizeOf(context);
+    final viewInsets = MediaQuery.viewInsetsOf(context);
 
     return GestureDetector(
       onPanDown: (details) {
         _animationController.stop();
       },
-      onPanUpdate: (details) {
-        _updateVerticalOffset(details, mediaQuery);
-      },
-      onPanEnd: (details) {
-        _snapBack(details, mediaQuery);
-      },
+      onPanUpdate: _updateVerticalOffset,
+      onPanEnd: _snapBack(size),
       child: AnimatedBuilder(
         animation: _offset,
         builder: (context, child) {
@@ -87,7 +84,7 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
                 borderRadius: BorderRadius.all(Radius.circular(44)),
                 color: Colors.white,
               ),
-              padding: mediaQuery.viewInsets,
+              padding: viewInsets,
               margin: const EdgeInsets.all(4.0),
               clipBehavior: Clip.hardEdge,
               child: widget.route.builder(context),
@@ -100,7 +97,6 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
 
   void _updateVerticalOffset(
     DragUpdateDetails details,
-    MediaQueryData mediaQuery,
   ) {
     if (details.delta.dy != 0) {
       _offset.value += Offset(
@@ -110,35 +106,33 @@ class _RoundedModalState<T> extends State<_RoundedModal<T>>
     }
   }
 
-  void _snapBack(
-    DragEndDetails details,
-    MediaQueryData mediaQuery,
-  ) {
-    _offsetAnimation = _animationController.drive(
-      Tween(
-        begin: _offset.value,
-        end: const Offset(0, 0),
-      ),
-    );
+  void Function(DragEndDetails) _snapBack(Size size) {
+    return (DragEndDetails details) {
+      _offsetAnimation = _animationController.drive(
+        Tween(
+          begin: _offset.value,
+          end: const Offset(0, 0),
+        ),
+      );
 
-    // Calculate the velocity relative to the unit interval, [0,1],
-    // used by the animation controller.
-    final pixelsPerSecond = details.velocity.pixelsPerSecond;
-    final size = mediaQuery.size;
+      // Calculate the velocity relative to the unit interval, [0,1],
+      // used by the animation controller.
+      final pixelsPerSecond = details.velocity.pixelsPerSecond;
 
-    final unitsPerSecondX = pixelsPerSecond.dx / size.width;
-    final unitsPerSecondY = pixelsPerSecond.dy / size.height;
-    final unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
-    final unitVelocity = unitsPerSecond.distance;
+      final unitsPerSecondX = pixelsPerSecond.dx / size.width;
+      final unitsPerSecondY = pixelsPerSecond.dy / size.height;
+      final unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
+      final unitVelocity = unitsPerSecond.distance;
 
-    const spring = SpringDescription(
-      mass: 30,
-      stiffness: 1,
-      damping: 1,
-    );
+      const spring = SpringDescription(
+        mass: 30,
+        stiffness: 1,
+        damping: 1,
+      );
 
-    final simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
+      final simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
 
-    _animationController.animateWith(simulation);
+      _animationController.animateWith(simulation);
+    };
   }
 }
