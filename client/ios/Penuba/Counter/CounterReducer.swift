@@ -72,7 +72,12 @@ struct CounterReducer: Reducer {
                 }
                 .cancellable(id: CancelID.timer)
             } else {
-                return .cancel(id: CancelID.timer)
+                return .merge(
+                    .cancel(id: CancelID.timer),
+                    .run { send in
+                        await send(.factButtonTapped)
+                    }
+                )
             }
         }
     }
