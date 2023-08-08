@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A4BEC6022A81DE310079F79E /* PenubaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC6012A81DE310079F79E /* PenubaApp.swift */; };
+		A4BEC6042A81DE310079F79E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC6032A81DE310079F79E /* ContentView.swift */; };
+		A4BEC6062A81DE320079F79E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4BEC6052A81DE320079F79E /* Assets.xcassets */; };
+		A4BEC6092A81DE320079F79E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4BEC6082A81DE320079F79E /* Preview Assets.xcassets */; };
+		A4BEC6132A81DE320079F79E /* PenubaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC6122A81DE320079F79E /* PenubaTests.swift */; };
+		A4BEC61D2A81DE320079F79E /* PenubaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC61C2A81DE320079F79E /* PenubaUITests.swift */; };
+		A4BEC61F2A81DE320079F79E /* PenubaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC61E2A81DE320079F79E /* PenubaUITestsLaunchTests.swift */; };
+		A4BEC62D2A81E1860079F79E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A4BEC62C2A81E1860079F79E /* ComposableArchitecture */; };
+		A4BEC6312A81E9090079F79E /* CounterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC6302A81E9090079F79E /* CounterReducer.swift */; };
+		A4BEC6332A81EA9D0079F79E /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC6322A81EA9D0079F79E /* CounterView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A4BEC60F2A81DE320079F79E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4BEC5F62A81DE310079F79E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4BEC5FD2A81DE310079F79E;
+			remoteInfo = Penuba;
+		};
+		A4BEC6192A81DE320079F79E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4BEC5F62A81DE310079F79E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4BEC5FD2A81DE310079F79E;
+			remoteInfo = Penuba;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A4BEC5FE2A81DE310079F79E /* Penuba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Penuba.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4BEC6012A81DE310079F79E /* PenubaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenubaApp.swift; sourceTree = "<group>"; };
+		A4BEC6032A81DE310079F79E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A4BEC6052A81DE320079F79E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4BEC6082A81DE320079F79E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A4BEC60E2A81DE320079F79E /* PenubaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PenubaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4BEC6122A81DE320079F79E /* PenubaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenubaTests.swift; sourceTree = "<group>"; };
+		A4BEC6182A81DE320079F79E /* PenubaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PenubaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4BEC61C2A81DE320079F79E /* PenubaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenubaUITests.swift; sourceTree = "<group>"; };
+		A4BEC61E2A81DE320079F79E /* PenubaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenubaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A4BEC6302A81E9090079F79E /* CounterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterReducer.swift; sourceTree = "<group>"; };
+		A4BEC6322A81EA9D0079F79E /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		A4BEC6342A822B020079F79E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4BEC5FB2A81DE310079F79E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4BEC62D2A81E1860079F79E /* ComposableArchitecture in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4BEC60B2A81DE320079F79E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4BEC6152A81DE320079F79E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A4BEC5F52A81DE310079F79E = {
+			isa = PBXGroup;
+			children = (
+				A4BEC6002A81DE310079F79E /* Penuba */,
+				A4BEC6112A81DE320079F79E /* PenubaTests */,
+				A4BEC61B2A81DE320079F79E /* PenubaUITests */,
+				A4BEC5FF2A81DE310079F79E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4BEC5FF2A81DE310079F79E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4BEC5FE2A81DE310079F79E /* Penuba.app */,
+				A4BEC60E2A81DE320079F79E /* PenubaTests.xctest */,
+				A4BEC6182A81DE320079F79E /* PenubaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A4BEC6002A81DE310079F79E /* Penuba */ = {
+			isa = PBXGroup;
+			children = (
+				A4BEC6342A822B020079F79E /* Info.plist */,
+				A4BEC62E2A81E8870079F79E /* Counter */,
+				A4BEC6012A81DE310079F79E /* PenubaApp.swift */,
+				A4BEC6032A81DE310079F79E /* ContentView.swift */,
+				A4BEC6052A81DE320079F79E /* Assets.xcassets */,
+				A4BEC6072A81DE320079F79E /* Preview Content */,
+			);
+			path = Penuba;
+			sourceTree = "<group>";
+		};
+		A4BEC6072A81DE320079F79E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A4BEC6082A81DE320079F79E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A4BEC6112A81DE320079F79E /* PenubaTests */ = {
+			isa = PBXGroup;
+			children = (
+				A4BEC6122A81DE320079F79E /* PenubaTests.swift */,
+			);
+			path = PenubaTests;
+			sourceTree = "<group>";
+		};
+		A4BEC61B2A81DE320079F79E /* PenubaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A4BEC61C2A81DE320079F79E /* PenubaUITests.swift */,
+				A4BEC61E2A81DE320079F79E /* PenubaUITestsLaunchTests.swift */,
+			);
+			path = PenubaUITests;
+			sourceTree = "<group>";
+		};
+		A4BEC62E2A81E8870079F79E /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				A4BEC6302A81E9090079F79E /* CounterReducer.swift */,
+				A4BEC6322A81EA9D0079F79E /* CounterView.swift */,
+			);
+			path = Counter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4BEC5FD2A81DE310079F79E /* Penuba */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4BEC6222A81DE320079F79E /* Build configuration list for PBXNativeTarget "Penuba" */;
+			buildPhases = (
+				A4BEC5FA2A81DE310079F79E /* Sources */,
+				A4BEC5FB2A81DE310079F79E /* Frameworks */,
+				A4BEC5FC2A81DE310079F79E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Penuba;
+			packageProductDependencies = (
+				A4BEC62C2A81E1860079F79E /* ComposableArchitecture */,
+			);
+			productName = Penuba;
+			productReference = A4BEC5FE2A81DE310079F79E /* Penuba.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A4BEC60D2A81DE320079F79E /* PenubaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4BEC6252A81DE320079F79E /* Build configuration list for PBXNativeTarget "PenubaTests" */;
+			buildPhases = (
+				A4BEC60A2A81DE320079F79E /* Sources */,
+				A4BEC60B2A81DE320079F79E /* Frameworks */,
+				A4BEC60C2A81DE320079F79E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4BEC6102A81DE320079F79E /* PBXTargetDependency */,
+			);
+			name = PenubaTests;
+			productName = PenubaTests;
+			productReference = A4BEC60E2A81DE320079F79E /* PenubaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A4BEC6172A81DE320079F79E /* PenubaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4BEC6282A81DE320079F79E /* Build configuration list for PBXNativeTarget "PenubaUITests" */;
+			buildPhases = (
+				A4BEC6142A81DE320079F79E /* Sources */,
+				A4BEC6152A81DE320079F79E /* Frameworks */,
+				A4BEC6162A81DE320079F79E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4BEC61A2A81DE320079F79E /* PBXTargetDependency */,
+			);
+			name = PenubaUITests;
+			productName = PenubaUITests;
+			productReference = A4BEC6182A81DE320079F79E /* PenubaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4BEC5F62A81DE310079F79E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					A4BEC5FD2A81DE310079F79E = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					A4BEC60D2A81DE320079F79E = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = A4BEC5FD2A81DE310079F79E;
+					};
+					A4BEC6172A81DE320079F79E = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = A4BEC5FD2A81DE310079F79E;
+					};
+				};
+			};
+			buildConfigurationList = A4BEC5F92A81DE310079F79E /* Build configuration list for PBXProject "Penuba" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A4BEC5F52A81DE310079F79E;
+			packageReferences = (
+				A4BEC62B2A81E1860079F79E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
+			productRefGroup = A4BEC5FF2A81DE310079F79E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4BEC5FD2A81DE310079F79E /* Penuba */,
+				A4BEC60D2A81DE320079F79E /* PenubaTests */,
+				A4BEC6172A81DE320079F79E /* PenubaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A4BEC5FC2A81DE310079F79E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4BEC6092A81DE320079F79E /* Preview Assets.xcassets in Resources */,
+				A4BEC6062A81DE320079F79E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4BEC60C2A81DE320079F79E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4BEC6162A81DE320079F79E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4BEC5FA2A81DE310079F79E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4BEC6312A81E9090079F79E /* CounterReducer.swift in Sources */,
+				A4BEC6042A81DE310079F79E /* ContentView.swift in Sources */,
+				A4BEC6022A81DE310079F79E /* PenubaApp.swift in Sources */,
+				A4BEC6332A81EA9D0079F79E /* CounterView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4BEC60A2A81DE320079F79E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4BEC6132A81DE320079F79E /* PenubaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4BEC6142A81DE320079F79E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4BEC61D2A81DE320079F79E /* PenubaUITests.swift in Sources */,
+				A4BEC61F2A81DE320079F79E /* PenubaUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A4BEC6102A81DE320079F79E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4BEC5FD2A81DE310079F79E /* Penuba */;
+			targetProxy = A4BEC60F2A81DE320079F79E /* PBXContainerItemProxy */;
+		};
+		A4BEC61A2A81DE320079F79E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4BEC5FD2A81DE310079F79E /* Penuba */;
+			targetProxy = A4BEC6192A81DE320079F79E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A4BEC6202A81DE320079F79E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A4BEC6212A81DE320079F79E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A4BEC6232A81DE320079F79E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Penuba/Preview Content\"";
+				DEVELOPMENT_TEAM = G5TAS63CPT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Penuba/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kupatahu.Penuba;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A4BEC6242A81DE320079F79E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Penuba/Preview Content\"";
+				DEVELOPMENT_TEAM = G5TAS63CPT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Penuba/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kupatahu.Penuba;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A4BEC6262A81DE320079F79E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G5TAS63CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kupatahu.PenubaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Penuba.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Penuba";
+			};
+			name = Debug;
+		};
+		A4BEC6272A81DE320079F79E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G5TAS63CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kupatahu.PenubaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Penuba.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Penuba";
+			};
+			name = Release;
+		};
+		A4BEC6292A81DE320079F79E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G5TAS63CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kupatahu.PenubaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Penuba;
+			};
+			name = Debug;
+		};
+		A4BEC62A2A81DE320079F79E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G5TAS63CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kupatahu.PenubaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Penuba;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A4BEC5F92A81DE310079F79E /* Build configuration list for PBXProject "Penuba" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4BEC6202A81DE320079F79E /* Debug */,
+				A4BEC6212A81DE320079F79E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4BEC6222A81DE320079F79E /* Build configuration list for PBXNativeTarget "Penuba" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4BEC6232A81DE320079F79E /* Debug */,
+				A4BEC6242A81DE320079F79E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4BEC6252A81DE320079F79E /* Build configuration list for PBXNativeTarget "PenubaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4BEC6262A81DE320079F79E /* Debug */,
+				A4BEC6272A81DE320079F79E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4BEC6282A81DE320079F79E /* Build configuration list for PBXNativeTarget "PenubaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4BEC6292A81DE320079F79E /* Debug */,
+				A4BEC62A2A81DE320079F79E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A4BEC62B2A81E1860079F79E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A4BEC62C2A81E1860079F79E /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4BEC62B2A81E1860079F79E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A4BEC5F62A81DE310079F79E /* Project object */;
+}
