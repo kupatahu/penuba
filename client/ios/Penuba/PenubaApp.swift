@@ -1,10 +1,3 @@
-//
-//  PenubaApp.swift
-//  Penuba
-//
-//  Created by NBMHQA123 on 08/08/23.
-//
-
 import SwiftUI
 
 @main
