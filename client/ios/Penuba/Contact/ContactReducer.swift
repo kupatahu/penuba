@@ -1,22 +1,21 @@
 import ComposableArchitecture
 import Foundation
-
-struct ContactsDomain: Reducer {
+struct ContactReducer: Reducer {
     struct State: Equatable {
-        @PresentationState var addContact: AddContactDomain.State?
+        @PresentationState var addContact: AddContactReducer.State?
         var contacts: IdentifiedArrayOf<Contact> = []
     }
     
     enum Action: Equatable {
         case addButtonTapped
-        case addContact(PresentationAction<AddContactDomain.Action>)
+        case addContact(PresentationAction<AddContactReducer.Action>)
     }
     
     var body: some ReducerOf<Self> {
         Reduce {  state, action in
             switch action {
             case .addButtonTapped:
-                state.addContact = AddContactDomain.State(
+                state.addContact = AddContactReducer.State(
                     contact: Contact(id: UUID(), name: "")
                 )
                 return  .none
@@ -36,7 +35,7 @@ struct ContactsDomain: Reducer {
                 return .none
             }
         }.ifLet(\.$addContact, action: /Action.addContact) {
-            AddContactDomain()
+            AddContactReducer()
         }
     }
 }

@@ -1,8 +1,8 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct ContactsView: View {
-    let store: StoreOf<ContactsDomain>
+struct ContactView: View {
+    let store: StoreOf<ContactReducer>
     
     var body: some View {
         WithViewStore(self.store, observe: \.contacts) { viewStore in
@@ -28,9 +28,9 @@ struct ContactsView: View {
 struct ContactView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ContactsView(
+            ContactView(
                 store: Store(
-                    initialState: ContactsDomain.State(
+                    initialState: ContactReducer.State(
                         contacts: [
                             Contact(id: UUID(), name: "Blob"),
                             Contact(id: UUID(), name: "Blob Jr"),
@@ -38,7 +38,7 @@ struct ContactView_Previews: PreviewProvider {
                         ]
                     )
                 ) {
-                    ContactsDomain()
+                    ContactReducer()
                 }
             )
         }
