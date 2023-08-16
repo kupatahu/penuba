@@ -20,8 +20,6 @@
 		A4BEC61D2A81DE320079F79E /* PenubaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC61C2A81DE320079F79E /* PenubaUITests.swift */; };
 		A4BEC61F2A81DE320079F79E /* PenubaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC61E2A81DE320079F79E /* PenubaUITestsLaunchTests.swift */; };
 		A4BEC62D2A81E1860079F79E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A4BEC62C2A81E1860079F79E /* ComposableArchitecture */; };
-		A4BEC6312A81E9090079F79E /* CounterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC6302A81E9090079F79E /* CounterReducer.swift */; };
-		A4BEC6332A81EA9D0079F79E /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC6322A81EA9D0079F79E /* CounterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,9 +55,6 @@
 		A4BEC6182A81DE320079F79E /* PenubaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PenubaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BEC61C2A81DE320079F79E /* PenubaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenubaUITests.swift; sourceTree = "<group>"; };
 		A4BEC61E2A81DE320079F79E /* PenubaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenubaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A4BEC6302A81E9090079F79E /* CounterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterReducer.swift; sourceTree = "<group>"; };
-		A4BEC6322A81EA9D0079F79E /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
-		A4BEC6342A822B020079F79E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				A419CA782A823E1700CDBC19 /* Contact */,
-				A4BEC6342A822B020079F79E /* Info.plist */,
-				A4BEC62E2A81E8870079F79E /* Counter */,
 				A4BEC6012A81DE310079F79E /* PenubaApp.swift */,
 				A4BEC6032A81DE310079F79E /* ContentView.swift */,
 				A4BEC6052A81DE320079F79E /* Assets.xcassets */,
@@ -157,15 +150,6 @@
 				A4BEC61E2A81DE320079F79E /* PenubaUITestsLaunchTests.swift */,
 			);
 			path = PenubaUITests;
-			sourceTree = "<group>";
-		};
-		A4BEC62E2A81E8870079F79E /* Counter */ = {
-			isa = PBXGroup;
-			children = (
-				A4BEC6302A81E9090079F79E /* CounterReducer.swift */,
-				A4BEC6322A81EA9D0079F79E /* CounterView.swift */,
-			);
-			path = Counter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +288,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4BEC6312A81E9090079F79E /* CounterReducer.swift in Sources */,
 				A419CA802A82443D00CDBC19 /* AddContactReducer.swift in Sources */,
 				A419CA7C2A823E9200CDBC19 /* ContactReducer.swift in Sources */,
 				A4BEC6042A81DE310079F79E /* ContentView.swift in Sources */,
@@ -312,7 +295,6 @@
 				A419CA7E2A823F7F00CDBC19 /* ContactView.swift in Sources */,
 				A419CA822A8245F600CDBC19 /* AddContactView.swift in Sources */,
 				A4BEC6022A81DE310079F79E /* PenubaApp.swift in Sources */,
-				A4BEC6332A81EA9D0079F79E /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
