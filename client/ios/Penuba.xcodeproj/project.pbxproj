@@ -20,6 +20,7 @@
 		A4BEC61D2A81DE320079F79E /* PenubaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC61C2A81DE320079F79E /* PenubaUITests.swift */; };
 		A4BEC61F2A81DE320079F79E /* PenubaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC61E2A81DE320079F79E /* PenubaUITestsLaunchTests.swift */; };
 		A4BEC62D2A81E1860079F79E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A4BEC62C2A81E1860079F79E /* ComposableArchitecture */; };
+		F4C1556C2A8D236800FC24A2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C1556B2A8D236800FC24A2 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A4BEC6182A81DE320079F79E /* PenubaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PenubaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BEC61C2A81DE320079F79E /* PenubaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenubaUITests.swift; sourceTree = "<group>"; };
 		A4BEC61E2A81DE320079F79E /* PenubaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenubaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F4C1556B2A8D236800FC24A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Penuba/Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		A4BEC5F52A81DE310079F79E = {
 			isa = PBXGroup;
 			children = (
+				F4C1556B2A8D236800FC24A2 /* Info.plist */,
 				A4BEC6002A81DE310079F79E /* Penuba */,
 				A4BEC6112A81DE320079F79E /* PenubaTests */,
 				A4BEC61B2A81DE320079F79E /* PenubaUITests */,
@@ -264,6 +267,7 @@
 			files = (
 				A4BEC6092A81DE320079F79E /* Preview Assets.xcassets in Resources */,
 				A4BEC6062A81DE320079F79E /* Assets.xcassets in Resources */,
+				F4C1556C2A8D236800FC24A2 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
