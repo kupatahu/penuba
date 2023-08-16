@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A419CA7A2A823E3500CDBC19 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419CA792A823E3500CDBC19 /* Contact.swift */; };
-		A419CA7C2A823E9200CDBC19 /* ContactReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419CA7B2A823E9200CDBC19 /* ContactReducer.swift */; };
-		A419CA7E2A823F7F00CDBC19 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419CA7D2A823F7F00CDBC19 /* ContactView.swift */; };
-		A419CA802A82443D00CDBC19 /* AddContactReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419CA7F2A82443D00CDBC19 /* AddContactReducer.swift */; };
+		A419CA7C2A823E9200CDBC19 /* ContactsDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419CA7B2A823E9200CDBC19 /* ContactsDomain.swift */; };
+		A419CA7E2A823F7F00CDBC19 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419CA7D2A823F7F00CDBC19 /* ContactsView.swift */; };
+		A419CA802A82443D00CDBC19 /* AddContactDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419CA7F2A82443D00CDBC19 /* AddContactDomain.swift */; };
 		A419CA822A8245F600CDBC19 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A419CA812A8245F600CDBC19 /* AddContactView.swift */; };
 		A4BEC6022A81DE310079F79E /* PenubaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC6012A81DE310079F79E /* PenubaApp.swift */; };
-		A4BEC6042A81DE310079F79E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC6032A81DE310079F79E /* ContentView.swift */; };
+		A4BEC6042A81DE310079F79E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC6032A81DE310079F79E /* RootView.swift */; };
 		A4BEC6062A81DE320079F79E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4BEC6052A81DE320079F79E /* Assets.xcassets */; };
 		A4BEC6092A81DE320079F79E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4BEC6082A81DE320079F79E /* Preview Assets.xcassets */; };
 		A4BEC6132A81DE320079F79E /* PenubaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC6122A81DE320079F79E /* PenubaTests.swift */; };
@@ -41,13 +41,13 @@
 
 /* Begin PBXFileReference section */
 		A419CA792A823E3500CDBC19 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		A419CA7B2A823E9200CDBC19 /* ContactReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactReducer.swift; sourceTree = "<group>"; };
-		A419CA7D2A823F7F00CDBC19 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
-		A419CA7F2A82443D00CDBC19 /* AddContactReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactReducer.swift; sourceTree = "<group>"; };
+		A419CA7B2A823E9200CDBC19 /* ContactsDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDomain.swift; sourceTree = "<group>"; };
+		A419CA7D2A823F7F00CDBC19 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		A419CA7F2A82443D00CDBC19 /* AddContactDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactDomain.swift; sourceTree = "<group>"; };
 		A419CA812A8245F600CDBC19 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 		A4BEC5FE2A81DE310079F79E /* Penuba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Penuba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BEC6012A81DE310079F79E /* PenubaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenubaApp.swift; sourceTree = "<group>"; };
-		A4BEC6032A81DE310079F79E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A4BEC6032A81DE310079F79E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		A4BEC6052A81DE320079F79E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4BEC6082A81DE320079F79E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A4BEC60E2A81DE320079F79E /* PenubaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PenubaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,9 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				A419CA792A823E3500CDBC19 /* Contact.swift */,
-				A419CA7B2A823E9200CDBC19 /* ContactReducer.swift */,
-				A419CA7D2A823F7F00CDBC19 /* ContactView.swift */,
-				A419CA7F2A82443D00CDBC19 /* AddContactReducer.swift */,
+				A419CA7B2A823E9200CDBC19 /* ContactsDomain.swift */,
+				A419CA7D2A823F7F00CDBC19 /* ContactsView.swift */,
+				A419CA7F2A82443D00CDBC19 /* AddContactDomain.swift */,
 				A419CA812A8245F600CDBC19 /* AddContactView.swift */,
 			);
 			path = Contact;
@@ -120,7 +120,7 @@
 			children = (
 				A419CA782A823E1700CDBC19 /* Contact */,
 				A4BEC6012A81DE310079F79E /* PenubaApp.swift */,
-				A4BEC6032A81DE310079F79E /* ContentView.swift */,
+				A4BEC6032A81DE310079F79E /* RootView.swift */,
 				A4BEC6052A81DE320079F79E /* Assets.xcassets */,
 				A4BEC6072A81DE320079F79E /* Preview Content */,
 			);
@@ -288,11 +288,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A419CA802A82443D00CDBC19 /* AddContactReducer.swift in Sources */,
-				A419CA7C2A823E9200CDBC19 /* ContactReducer.swift in Sources */,
-				A4BEC6042A81DE310079F79E /* ContentView.swift in Sources */,
+				A419CA802A82443D00CDBC19 /* AddContactDomain.swift in Sources */,
+				A419CA7C2A823E9200CDBC19 /* ContactsDomain.swift in Sources */,
+				A4BEC6042A81DE310079F79E /* RootView.swift in Sources */,
 				A419CA7A2A823E3500CDBC19 /* Contact.swift in Sources */,
-				A419CA7E2A823F7F00CDBC19 /* ContactView.swift in Sources */,
+				A419CA7E2A823F7F00CDBC19 /* ContactsView.swift in Sources */,
 				A419CA822A8245F600CDBC19 /* AddContactView.swift in Sources */,
 				A4BEC6022A81DE310079F79E /* PenubaApp.swift in Sources */,
 			);
