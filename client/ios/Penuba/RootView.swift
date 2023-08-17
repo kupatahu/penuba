@@ -1,14 +1,14 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct ContentView: View {
-    let store: StoreOf<ContactReducer> = Store(initialState: ContactReducer.State()) {
-        ContactReducer()
+struct RootView: View {
+    let store: StoreOf<ContactsDomain> = Store(initialState: ContactsDomain.State()) {
+        ContactsDomain()
     }
     
     var body: some View {
         NavigationStack {
-            ContactView(store: self.store)
+            ContactsView(store: self.store)
         }
         .sheet(
             store: self.store.scope(
@@ -23,8 +23,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RootView()
     }
 }
