@@ -8,7 +8,16 @@ struct ContactsView: View {
         WithViewStore(self.store, observe: \.contacts) { viewStore in
             List {
                 ForEach(viewStore.state) { contact in
-                    Text(contact.name)
+                    HStack {
+                        Text(contact.name)
+                        Spacer()
+                        Button {
+                            viewStore.send(.deleteButtonTapped(id: contact.id))
+                        } label: {
+                            Image(systemName: "trash")
+                                .foregroundColor(.red)
+                        }
+                    }
                 }
             }
             .navigationTitle("Contacts")

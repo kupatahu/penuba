@@ -20,6 +20,12 @@ struct RootView: View {
                 AddContactView(store: addContactStore)
             }
         }
+        .alert(
+            store: self.store.scope(
+                state: \.$alert,
+                action: { .alert($0) }
+            )
+        )
     }
 }
 
