@@ -5,32 +5,54 @@ struct ContactsView: View {
     let store: StoreOf<ContactsDomain>
     
     var body: some View {
-        WithViewStore(self.store, observe: \.contacts) { viewStore in
-            List {
-                ForEach(viewStore.state) { contact in
-                    HStack {
-                        Text(contact.name)
-                        Spacer()
+        NavigationStack {
+            WithViewStore(self.store, observe: \.contacts) { viewStore in
+                List {
+                    ForEach(viewStore.state) { contact in
+                        HStack {
+                            Text(contact.name)
+                            Spacer()
+                            Button {
+                                viewStore.send(.deleteButtonTapped(id: contact.id))
+                            } label: {
+                                Image(systemName: "trash")
+                                    .foregroundColor(.red)
+                            }
+                        }
+                    }
+                }
+                .navigationTitle("Contacts")
+                .toolbar {
+                    ToolbarItem {
                         Button {
-                            viewStore.send(.deleteButtonTapped(id: contact.id))
+                            viewStore.send(.addButtonTapped)
                         } label: {
-                            Image(systemName: "trash")
-                                .foregroundColor(.red)
+                            Image(systemName: "plus")
                         }
                     }
                 }
             }
-            .navigationTitle("Contacts")
-            .toolbar {
-                ToolbarItem {
-                    Button {
-                        viewStore.send(.addButtonTapped)
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                }
+        }
+        .sheet(
+            store: self.store.scope(
+                state: \.$destination,
+                action: { .destination($0) }
+            ),
+            state: /ContactsDomain.Destination.State.addContact,
+            action: ContactsDomain.Destination.Action.addContact
+        ) { addContactStore in
+            NavigationStack {
+                AddContactView(store: addContactStore)
             }
         }
+        .alert(
+            store: self.store.scope(
+                state: \.$destination,
+                action: { .destination($0) }
+            ),
+            state: /ContactsDomain.Destination.State.alert,
+            action: ContactsDomain.Destination.Action.alert
+        )
     }
 }
 
