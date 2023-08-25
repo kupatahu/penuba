@@ -12,9 +12,11 @@ struct RootView: View {
         }
         .sheet(
             store: self.store.scope(
-                state: \.$addContact,
-                action: { .addContact($0) }
-            )
+                state: \.$destination,
+                action: { .destination($0) }
+            ),
+            state: /ContactsDomain.Destination.State.addContact,
+            action: ContactsDomain.Destination.Action.addContact
         ) { addContactStore in
             NavigationStack {
                 AddContactView(store: addContactStore)
@@ -22,9 +24,11 @@ struct RootView: View {
         }
         .alert(
             store: self.store.scope(
-                state: \.$alert,
-                action: { .alert($0) }
-            )
+                state: \.$destination,
+                action: { .destination($0) }
+            ),
+            state: /ContactsDomain.Destination.State.alert,
+            action: ContactsDomain.Destination.Action.alert
         )
     }
 }

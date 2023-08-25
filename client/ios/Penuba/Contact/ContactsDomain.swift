@@ -1,17 +1,35 @@
 import ComposableArchitecture
 import Foundation
 
+extension ContactsDomain {
+    struct Destination: Reducer {
+        enum State: Equatable {
+            case addContact(AddContactDomain.State)
+            case alert(AlertState<ContactsDomain.Action.Alert>)
+        }
+        
+        enum Action: Equatable {
+            case addContact(AddContactDomain.Action)
+            case alert(ContactsDomain.Action.Alert)
+        }
+        
+        var body: some ReducerOf<Self> {
+            Scope(state: /State.addContact, action: /Action.addContact) {
+                AddContactDomain()
+            }
+        }
+    }
+}
+
 struct ContactsDomain: Reducer {
     struct State: Equatable {
-        @PresentationState var addContact: AddContactDomain.State?
-        @PresentationState var alert: AlertState<Action.Alert>?
         var contacts: IdentifiedArrayOf<Contact> = []
+        @PresentationState var destination: Destination.State?
     }
     
     enum Action: Equatable {
         case addButtonTapped
-        case addContact(PresentationAction<AddContactDomain.Action>)
-        case alert(PresentationAction<Alert>)
+        case destination(PresentationAction<Destination.Action>)
         case deleteButtonTapped(id: Contact.ID)
         enum Alert: Equatable {
             case confirmDeletion(id: Contact.ID)
@@ -22,40 +40,39 @@ struct ContactsDomain: Reducer {
         Reduce {  state, action in
             switch action {
             case .addButtonTapped:
-                state.addContact = AddContactDomain.State(
-                    contact: Contact(id: UUID(), name: "")
+                state.destination = .addContact(
+                    AddContactDomain.State(
+                        contact: Contact(id: UUID(), name: "")
+                    )
                 )
                 return  .none
                 
-            case let .addContact(.presented(.delegate(.saveContact(contact)))):
+            case let .destination(.presented(.addContact(.delegate(.saveContact(contact))))):
                 state.contacts.append(contact)
                 return .none
                 
-            case .addContact:
-                return .none
-                
-            case let .alert(.presented(.confirmDeletion(id: id))):
+            case let .destination(.presented(.alert(.confirmDeletion(id: id)))):
                 state.contacts.remove(id: id)
                 return .none
                 
-            case .alert:
+            case .destination:
                 return .none
             
             case let .deleteButtonTapped(id: id):
-                print("here ")
-                state.alert = AlertState {
-                    TextState("Are you sure?")
-                } actions: {
-                    ButtonState(role: .destructive, action: .confirmDeletion(id: id)) {
-                        TextState("Delete")
+                state.destination = .alert(
+                    AlertState {
+                        TextState("Are you sure?")
+                    } actions: {
+                        ButtonState(role: .destructive, action: .confirmDeletion(id: id)) {
+                            TextState("Delete")
+                        }
                     }
-                }
+                )
                 return .none
             }
         }
-        .ifLet(\.$addContact, action: /Action.addContact) {
-            AddContactDomain()
+        .ifLet(\.$destination, action: /Action.destination) {
+            Destination()
         }
-        .ifLet(\.alert, action: /Action.alert)
     }
 }
