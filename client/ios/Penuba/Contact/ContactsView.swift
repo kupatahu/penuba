@@ -10,17 +10,9 @@ struct ContactsView: View {
                 List {
                     ForEach(viewStore.state) { contact in
                         NavigationLink(state: ContactDetailDomain.State(contact: contact)) {
-                            HStack {
-                                Text(contact.name)
-                                Spacer()
-                                Button {
-                                    viewStore.send(.deleteButtonTapped(id: contact.id))
-                                } label: {
-                                    Image(systemName: "trash")
-                                        .foregroundColor(.red)
-                                }
-                            }
+                            Text(contact.name)
                         }
+                        .buttonStyle(.borderless)
                     }
                 }
                 .navigationTitle("Contacts")
@@ -49,14 +41,6 @@ struct ContactsView: View {
                 AddContactView(store: addContactStore)
             }
         }
-        .alert(
-            store: self.store.scope(
-                state: \.$destination,
-                action: { .destination($0) }
-            ),
-            state: /ContactsDomain.Destination.State.alert,
-            action: ContactsDomain.Destination.Action.alert
-        )
     }
 }
 

@@ -5,12 +5,10 @@ extension ContactsDomain {
     struct Destination: Reducer {
         enum State: Equatable {
             case addContact(AddContactDomain.State)
-            case alert(AlertState<ContactsDomain.Action.Alert>)
         }
         
         enum Action: Equatable {
             case addContact(AddContactDomain.Action)
-            case alert(ContactsDomain.Action.Alert)
         }
         
         var body: some ReducerOf<Self> {
@@ -30,12 +28,8 @@ struct ContactsDomain: Reducer {
     
     enum Action: Equatable {
         case addButtonTapped
-        case deleteButtonTapped(id: Contact.ID)
         case destination(PresentationAction<Destination.Action>)
         case path(StackAction<ContactDetailDomain.State, ContactDetailDomain.Action>)
-        enum Alert: Equatable {
-            case confirmDeletion(id: Contact.ID)
-        }
     }
     
     var body: some ReducerOf<Self> {
@@ -49,27 +43,16 @@ struct ContactsDomain: Reducer {
                 )
                 return  .none
                 
-            case let .deleteButtonTapped(id: id):
-                state.destination = .alert(
-                    AlertState {
-                        TextState("Are you sure?")
-                    } actions: {
-                        ButtonState(role: .destructive, action: .confirmDeletion(id: id)) {
-                            TextState("Delete")
-                        }
-                    }
-                )
-                return .none
-                
             case let .destination(.presented(.addContact(.delegate(.saveContact(contact))))):
                 state.contacts.append(contact)
                 return .none
                 
-            case let .destination(.presented(.alert(.confirmDeletion(id: id)))):
-                state.contacts.remove(id: id)
+            case .destination:
                 return .none
                 
-            case .destination:
+            case let .path(.element(id: id, action: .delegate(.confirmDeletion))):
+                guard let detailState = state.path[id: id] else { return .none }
+                state.contacts.remove(id: detailState.contact.id)
                 return .none
                 
             case .path:
