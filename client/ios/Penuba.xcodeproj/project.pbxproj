@@ -24,6 +24,7 @@
 		A4BEC6332A81EA9D0079F79E /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEC6322A81EA9D0079F79E /* CounterView.swift */; };
 		F45147032A91C5F60034D32B /* ContactDetailDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45147022A91C5F60034D32B /* ContactDetailDomain.swift */; };
 		F45147052A91C71D0034D32B /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45147042A91C71D0034D32B /* ContactDetailView.swift */; };
+		F45938BC2A9A62EC00AB2003 /* RootDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45938BB2A9A62EB00AB2003 /* RootDomain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		A4BEC6342A822B020079F79E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F45147022A91C5F60034D32B /* ContactDetailDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailDomain.swift; sourceTree = "<group>"; };
 		F45147042A91C71D0034D32B /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
+		F45938BB2A9A62EB00AB2003 /* RootDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDomain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				A4BEC62E2A81E8870079F79E /* Counter */,
 				A4BEC6012A81DE310079F79E /* PenubaApp.swift */,
 				A4BEC6032A81DE310079F79E /* RootView.swift */,
+				F45938BB2A9A62EB00AB2003 /* RootDomain.swift */,
 				A4BEC6052A81DE320079F79E /* Assets.xcassets */,
 				A4BEC6072A81DE320079F79E /* Preview Content */,
 			);
@@ -321,6 +324,7 @@
 				A4BEC6022A81DE310079F79E /* PenubaApp.swift in Sources */,
 				F45147052A91C71D0034D32B /* ContactDetailView.swift in Sources */,
 				A4BEC6332A81EA9D0079F79E /* CounterView.swift in Sources */,
+				F45938BC2A9A62EC00AB2003 /* RootDomain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
