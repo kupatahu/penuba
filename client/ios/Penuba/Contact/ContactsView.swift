@@ -5,18 +5,20 @@ struct ContactsView: View {
     let store: StoreOf<ContactsDomain>
     
     var body: some View {
-        NavigationStack {
+        NavigationStackStore(self.store.scope(state: \.path, action: { .path($0) })) {
             WithViewStore(self.store, observe: \.contacts) { viewStore in
                 List {
                     ForEach(viewStore.state) { contact in
-                        HStack {
-                            Text(contact.name)
-                            Spacer()
-                            Button {
-                                viewStore.send(.deleteButtonTapped(id: contact.id))
-                            } label: {
-                                Image(systemName: "trash")
-                                    .foregroundColor(.red)
+                        NavigationLink(state: ContactDetailDomain.State(contact: contact)) {
+                            HStack {
+                                Text(contact.name)
+                                Spacer()
+                                Button {
+                                    viewStore.send(.deleteButtonTapped(id: contact.id))
+                                } label: {
+                                    Image(systemName: "trash")
+                                        .foregroundColor(.red)
+                                }
                             }
                         }
                     }
@@ -32,6 +34,8 @@ struct ContactsView: View {
                     }
                 }
             }
+        } destination: { store in
+            ContactDetailView(store: store)
         }
         .sheet(
             store: self.store.scope(
