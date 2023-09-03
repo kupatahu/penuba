@@ -1,26 +1,15 @@
 import Foundation
 
-protocol Reminder: Equatable, Identifiable {
-    var id: UUID { get }
-    var type: ReminderType { get }
-    var title: String { get }
-    var nextSchedule: Date { get }
-}
-
-enum ReminderType {
-    case catchUp
-}
-
-struct CatchupReminder: Reminder {
-    var id: UUID
-    var type: ReminderType
+struct Reminder: Equatable, Identifiable {
+    let id: UUID
     var title: String
     var nextSchedule: Date
-    
-    init(title: String, nextSchedule: Date) {
-        id = UUID()
-        type = .catchUp
-        self.title = title
-        self.nextSchedule = nextSchedule
+}
+
+extension Reminder {
+    init() {
+        self.id = UUID()
+        self.title = ""
+        self.nextSchedule = Date()
     }
 }

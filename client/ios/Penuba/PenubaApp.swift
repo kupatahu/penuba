@@ -5,9 +5,13 @@ import ComposableArchitecture
 struct PenubaApp: App {
     var body: some Scene {
         WindowGroup {
-            RootView(
-                store: Store(initialState: RootDomain.State()) {
-                    RootDomain()
+            CoordinatorView(
+                store: Store(
+                    initialState: Coordinator.State(
+                        routes: [.root(.dashboard(.init()))]
+                    )
+                ) {
+                    Coordinator()
                 }
             )
         }

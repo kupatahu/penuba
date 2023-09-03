@@ -1,11 +1,13 @@
 import ComposableArchitecture
 
 struct Dashboard: Reducer {
-    struct State {
+    struct State: Equatable {
         var reminders: IdentifiedArrayOf<Reminder> = []
     }
     
-    enum Action {}
+    enum Action: Equatable {
+        case addButtonTapped(Reminder)
+    }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
